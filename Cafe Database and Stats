@@ -1,0 +1,28 @@
+CREATE TABLE cafe (id INTEGER PRIMARY KEY, item TEXT, price INTEGER);
+
+INSERT into cafe values 
+(1, "Latte", 5.50),
+(2, "Espresso", 4),
+(3, "Cappuccino", 5),
+(4, "Iced Coffee", 3),
+(5, "Tea", 2),
+(6, "Frappuccino", 5.75);
+
+INSERT into cafe values 
+(7, "blueberry muffin", 3.25), 
+(8, "scone", 2), 
+(9, "cake slice", 5), 
+(10, "croissant", 2.75), 
+(11, "bagel", 1);
+
+INSERT into cafe values 
+(12, "panini", 6.75), 
+(13, "blt", 5.75), 
+(14, "salad", 4), 
+(15, "egg bites", 3);
+
+SELECT * from cafe;
+SELECT * from cafe WHERE price < 6.75
+ORDER BY price;
+SELECT * from cafe WHERE price < 3;
+SELECT MAX(price) from cafe;
