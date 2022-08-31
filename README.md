@@ -1,2 +1,2 @@
-# Arelis Sandoval's SQL Portfolio
+# Arelis' SQL Portfolio
 Hello and welcome to my SQL portfolio! In this code repository, I will share examples of SQL I have written.
