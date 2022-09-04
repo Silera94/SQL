@@ -1,28 +1,34 @@
-CREATE TABLE cafe (id INTEGER PRIMARY KEY, item TEXT, price INTEGER);
+CREATE TABLE Cafe (id INTEGER PRIMARY KEY, item TEXT, category TEXT, price INTEGER, sold INTEGER);
 
-INSERT into cafe values 
-(1, "Latte", 5.50),
-(2, "Espresso", 4),
-(3, "Cappuccino", 5),
-(4, "Iced Coffee", 3),
-(5, "Tea", 2),
-(6, "Frappuccino", 5.75);
+INSERT into Cafe values 
+(1, "Latte", "beverages", 5.50, 121),
+(2, "Espresso", "beverages", 4, 84 ),
+(3, "Cappuccino", "beverages", 5, 62),
+(4, "Iced Coffee", "beverages", 3, 235),
+(5, "Tea", "beverages", 2, 91),
+(6, "Frappuccino", "beverages", 5.75, 140),
+(7, "Muffin", "bakery", 3.25, 30), 
+(8, "Scone", "bakery", 2, 22), 
+(9, "Cake Slice", "bakery", 5, 17), 
+(10, "Croissant", "bakery", 2.75, 41), 
+(11, "Bagel", "bakery", 1.50, 36),
+(12, "Avocado Toast", "brunch", 6.75, 44), 
+(13, "BET", "brunch", 5.75, 28), 
+(14, "Hash Bowl", "brunch", 7, 39), 
+(15, "Breakfast Wrap", "brunch", 5, 56 );
 
-INSERT into cafe values 
-(7, "blueberry muffin", 3.25), 
-(8, "scone", 2), 
-(9, "cake slice", 5), 
-(10, "croissant", 2.75), 
-(11, "bagel", 1);
+-shows complete table
+Select * from Cafe;
 
-INSERT into cafe values 
-(12, "panini", 6.75), 
-(13, "blt", 5.75), 
-(14, "salad", 4), 
-(15, "egg bites", 3);
+-shows prices of items from least to greatest
+Select * from Cafe 
+Order by price;
 
-SELECT * from cafe;
-SELECT * from cafe WHERE price < 6.75
-ORDER BY price;
-SELECT * from cafe WHERE price < 3;
-SELECT MAX(price) from cafe;
+-showsa all items that are less than 5 dollars
+Select * from Cafe where price < 5;
+
+-shows the total amount of beverages that where sold that day
+Select sum(sold) from Cafe WHERE category = "beverages";
+
+-shows the item that was sold the most that day
+Select max(sold) from Cafe
