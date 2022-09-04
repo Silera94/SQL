@@ -1,4 +1,4 @@
-CREATE TABLE Cafe (id INTEGER PRIMARY KEY, item TEXT, category TEXT, price INTEGER, sold INTEGER);
+CREATE TABLE Cafe (id INTEGER PRIMARY KEY, item TEXT, category TEXT, price INTEGER, sold_daily INTEGER);
 
 INSERT into Cafe values 
 (1, "Latte", "beverages", 5.50, 121),
@@ -24,11 +24,11 @@ Select * from Cafe;
 Select * from Cafe 
 Order by price;
 
--showsa all items that are less than 5 dollars
+-shows all items that are less than 5 dollars
 Select * from Cafe where price < 5;
 
 -shows the total amount of beverages that where sold that day
-Select sum(sold) from Cafe WHERE category = "beverages";
+Select sum(sold_daily) from Cafe WHERE category = "beverages";
 
 -shows the item that was sold the most that day
-Select max(sold) from Cafe
+Select max(sold_daily) from Cafe;
