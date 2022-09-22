@@ -103,6 +103,8 @@ SELECT * from pokemon where type_1 = "Bug" AND type_2 = "Poison";
 -which pokemon are water or electric?
 SELECT * from pokemon where type_1 = "Water" OR type_1 = "Electric";
 
+-which pokemon is the strongest?
+SELECT name, max(total) from pokemon;
 
 
 
