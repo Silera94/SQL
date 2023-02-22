@@ -1,0 +1,77 @@
+/* Parks and Rec*/
+Create table Staff (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Age INTEGER);
+
+INSERT into Staff values 
+(1, "Leslie Knope", 38),
+(2, "Ann Perkins", 33),
+(3, "April Ludgate", 21),
+(4, "Ron Swanson", 39),
+(5, "Andy Dwyer", 30),
+(6, "Jerry Gergich", 47),
+(7, "Donna Meagle", 39),
+(8, "Tom Haverford", 26),
+(9, "Ben Wyatt", 36),
+(10, "Jean-Ralphio Saperstein", 28),
+(11, "Mona-Lisa Saperstein", 27),
+(12, "Chris Traeger", 42),
+(13, "Mark Brendanawicz", 33),
+(14, "Councilman Jam",41),
+(15, "Tammy Swanson", 45);
+
+SELECT * from Staff;
+
+Create table Hobbies (staff_id INTEGER, hobbie TEXT);
+
+INSERT into Hobbies values
+(3, "listening to music"),
+(1, "scrapbooking"),
+(4, "hunting"),
+(6, "painting"),
+(2, "crafting"),
+(5, "karate"),
+(1, "crafting"),
+(10, "partying"),
+(11, "partying"),
+(7, "shopping"),
+(12, "exercising"),
+(9, "claymation"),
+(8, "shopping"),
+(14, "golfing"),
+(13, "watching movies"),
+(15, "reading");
+
+SELECT * from Hobbies;
+
+Create table Foods (id INTEGER PRIMARY KEY AUTOINCREMENT, Food TEXT, Dessert TEXT);
+
+INSERT into Foods values
+(1, "waffles", "whipped cream"),
+(2, "salad", "chocolate"),
+(3, "chili", "dark chocolate"),
+(4, "steak", "doughnut"),
+(5, "cheese burger", "skittles"),
+(6, "burrito", "ice cream"),
+(7, "spagetti", "tiramisu"),
+(8, "salad", "fudge"),
+(9, "calzone", "twizzlers"),
+(10, "pizza", "jello"),
+(11, "chicken nuggets", "laffy taffy"),
+(12, "salad", "fruit"),
+(13, "subway", "smores"),
+(14, "sushi", "snowcone"),
+(15, "soup", "cherry pie");
+
+SELECT * from Foods;
+
+SELECT staff.name, hobbies.hobbie 
+FROM Staff
+JOIN Hobbies ON staff.id=hobbies.staff_id;
+
+SELECT staff.name, hobbies.hobbie, foods.food, foods.dessert FROM Staff
+JOIN hobbies ON staff.id=hobbies.staff_id
+JOIN Foods ON staff.id=foods.id
+ORDER BY age ASC;
+
+SELECT staff.name, foods.dessert
+FROM Staff
+JOIN Foods ON staff.id=foods.id;
